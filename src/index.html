@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-purple-300">
+    <main
+      class="container mx-auto mt-24 p-12 flex flex-col justify-center items-center rounded-lg shadow-2xl"
+      style="background-color: #3cdfea"
+    >
+      <h1 class="text-3xl font-bold font-sans text-indigo-600">Stopwatch</h1>
+
+      <h2 class="text-xl mt-8 font-bold font-sans text-indigo-600">0:00</h2>
+      <div class="flex mt-12">
+        <button
+          class="bg-pink-800 hover:bg-pink-00 px-4 py-2 rounded mr-4 text-xl font-sans font-bold text-red-200"
+        >
+          Start
+        </button>
+        <button
+          class="bg-pink-800 hover:bg-pink-00 px-4 py-2 rounded mr-4 text-xl font-sans font-bold text-red-200"
+        >
+          Next
+        </button>
+        <button
+          class="bg-pink-800 hover:bg-pink-00 px-4 py-2 rounded mr-4 text-xl font-sans font-bold text-red-200"
+        >
+          Stop
+        </button>
+        <button
+          class="bg-pink-800 hover:bg-pink-00 px-4 py-2 rounded mr-4 text-xl font-sans font-bold text-red-200"
+        >
+          Pause
+        </button>
+        <button
+          class="bg-pink-800 hover:bg-pink-00 px-4 py-2 rounded mr-4 text-xl font-sans font-bold text-red-200"
+        >
+          Save
+        </button>
+      </div>
+      <section class="mt-12">
+        <h2 class="text-xl font-bold font-sans text-indigo-600">
+          Ostatnie wyniki
+        </h2>
+      </section>
+    </main>
+  </body>
+</html>
