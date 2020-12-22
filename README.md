@@ -46,6 +46,8 @@ Chciałbym żeby wyświetlanie wyników korzystało z feature'u akordeon, czyli 
 
 Działający Stoper i wszystkie funkcjonalności: 8 pkt
 
+Funkcjonalności START, PAUSE, RESET: 3 pkt (czyli bez NEXT, bez zapisywania i STOP, bieda wersja po prostu)
+
 Bonusy: 3 pkt
 
 Extra Bonus: 1 pkt
