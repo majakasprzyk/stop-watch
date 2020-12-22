@@ -12,6 +12,8 @@ Stop - Zatrzymanie na obecnym wyniku
 
 Pauza - Zapauzowanie
 
+Reset - Reset wyników bez zapisywania
+
 Next - Odpalenie dodatkowego czasomierza, a poprzedni czas jest wyświetlony poniżej. (Symulacja tego, że ktoś już dobiegł na metę i odliczamy dalej czas dla kolejnej nadchodzącej osoby)
 
 Save - Zapisanie danych w localStorage
@@ -20,6 +22,7 @@ Save - Zapisanie danych w localStorage
 
 * Nie mogę nacisnąć przycisku **Save** dopóki nie nacisnąłem **Stop**
 * Po naciśnięciu **Pause** mogę wznowić licznik używając **Start** lub **Pause**
+* Po naciśnięciu **Save** czyścimy obecne czasy i stoper jest do ponownego użycia
 
 ## Zapisywanie wyników
 
@@ -27,10 +30,24 @@ Wyniki powinny zostać zapisane w localStorage.
 
 Chciałbym mieć możliwość nadania nazwy dla wpisu.
 
-Chciałbym żeby wyniki korzystały z feature'u akordeon, czyli klikam w **nazwę** wpisu i wyjeżdżają mi czasy zapisane pod tym wpisem :)
+Chciałbym żeby wyświetlanie wyników korzystało z feature'u akordeon, czyli klikam w **nazwę** wpisu i wyjeżdżają mi czasy zapisane pod tym wpisem :)
 
 ## Bonus
+
 * Wyświetlanie czasu jak w prawdziwych stoperach (setne sekund)
-* Zapisywanie danych w Firebase
 * Przycisk **STOP** jest widoczny dopiero po naciśnięciu **START**
 * Przycisk **SAVE** jest widoczny dopiero po naciśnięciu **STOP**
+
+### Extra Bonus
+
+* Zapisywanie danych w Firebase
+
+## Punktacja
+
+Działający Stoper i wszystkie funkcjonalności: 8 pkt
+
+Bonusy: 3 pkt
+
+Extra Bonus: 1 pkt
+
+## **TERMIN 10.01.2021 14:00**
