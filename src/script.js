@@ -25,3 +25,8 @@ function timeToString(time) {
   
     return `${formattedHH}:${formattedMM}:${formattedSS}`;
   };
+
+  startBtn.addEventListener("click", start);
+  pauseBtn.addEventListener("click", pause);
+  resetBtn.addEventListener("click", reset);
+  
