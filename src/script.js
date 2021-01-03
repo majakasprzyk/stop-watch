@@ -9,6 +9,9 @@ const pauseBtn = document.querySelector(".pauseBtn");
 const saveBtn = document.querySelector(".saveBtn");
 const resetBtn = document.querySelector(".resetBtn");
 
+let startTime;
+let elapsedTime = 0;
+
 // shows time as a string
 
 function timeToString(time) {
@@ -33,39 +36,33 @@ function timeToString(time) {
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
   };
 
+// events
 
-  let startTime;
-  let elapsedTime = 0;
+startBtn.addEventListener('click', start);
+pauseBtn.addEventListener("click", pause);
+resetBtn.addEventListener("click", reset);
+nextBtn.addEventListener("click", next);
+
+// functions
 
 function print(text){
   timer.innerHTML = text;
-}
+};
+ 
+function start() {
+  startTime = Date.now() - elapsedTime;
+  timerInterval = setInterval(printTime, 10);
+};
 
-  // start button 
+function printTime(){
+  elapsedTime = Date.now() - startTime;
+  print(timeToString(elapsedTime))
+};
 
-  startBtn.addEventListener('click', start);
-  
-  function start() {
-    startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(printTime, 10);
-  };
+function pause(){
+   clearInterval(timerInterval);
+};
 
-  function printTime(){
-    elapsedTime = Date.now() - startTime;
-    print(timeToString(elapsedTime))
-  };
-
-// pause button
-
-pauseBtn.addEventListener("click", pause);
-
-  function pause(){
-    clearInterval(timerInterval);
-  };
-
-// reset button 
-
-resetBtn.addEventListener("click", reset);
 
 function reset(){
   clearInterval(timerInterval);
@@ -73,10 +70,6 @@ function reset(){
   elasedTime = 0;
 };
   
-// next button
-
-nextBtn.addEventListener("click", next);
-
 function next(){
   secondTimer.style.display = "block";
   clearInterval(timerInterval);
