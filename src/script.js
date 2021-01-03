@@ -34,7 +34,7 @@ function timeToString(time) {
 
 
   let startTime;
-  let elapsedTime;
+  let elapsedTime = 0;
 
 function print(text){
   timer.innerHTML = text;
@@ -43,7 +43,7 @@ function print(text){
   // start button 
 
   startBtn.addEventListener('click', () => {
-    startTime = Date.now();
+    startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(function printTime(){
         elapsedTime = Date.now() - startTime;
         print(timeToString(elapsedTime))
