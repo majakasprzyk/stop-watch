@@ -72,6 +72,6 @@ function reset(){
   
 function next(){
   secondTimer.style.display = "block";
-  clearInterval(timerInterval);
+  pause();
 
 };
