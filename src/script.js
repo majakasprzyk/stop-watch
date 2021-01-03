@@ -19,12 +19,17 @@ function timeToString(time) {
   
     let seconds = (minutes - mm) * 60;
     let ss = Math.floor(seconds);
+
+    let milliseconds = (seconds - ss) * 100;
+    let ms = Math.floor(milliseconds);
   
-    let formattedHH = hh.toString().padStart(2, "0");
+  
     let formattedMM = mm.toString().padStart(2, "0");
     let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(2, "0");
+    
   
-    return `${formattedHH}:${formattedMM}:${formattedSS}`;
+    return `${formattedMM}:${formattedSS}:${formattedMS}`;
   };
 
 
@@ -33,13 +38,13 @@ function timeToString(time) {
 
 
   // start button 
-  
+
   startBtn.addEventListener('click', () => {
     startTime = Date.now();
     setInterval(function printTime(){
         elapsedTime = Date.now() - startTime;
         timer.innerHTML = timeToString(elapsedTime);
-    }, 1000);
+    }, 10);
   });
 
 
