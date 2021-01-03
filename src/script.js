@@ -43,6 +43,7 @@ pauseBtn.addEventListener("click", pause);
 resetBtn.addEventListener("click", reset);
 nextBtn.addEventListener("click", next);
 stopBtn.addEventListener("click", stop);
+saveBtn.addEventListener("click", save);
 
 // functions
 
@@ -76,7 +77,11 @@ function next(){
 // WIP
 };
 
-function stop() {
+function stop(){
   pause();
 // czym ma się róźnić stop od pause skoro: Stop === Koniec ale Zatrzymanie na obecnym wyniku
+};
+
+function save(){
+  localStorage.setItem('result:', timeToString(elapsedTime));
 };
