@@ -1,6 +1,7 @@
 console.log('Good luck!')
 
 const timer = document.querySelector(".timer");
+const secondTimer = document.querySelector(".second-timer")
 const startBtn = document.querySelector(".startBtn")
 const nextBtn = document.querySelector(".nextBtn");
 const stopBtn = document.querySelector(".stopBtn");
@@ -42,22 +43,42 @@ function print(text){
 
   // start button 
 
-  startBtn.addEventListener('click', () => {
+  startBtn.addEventListener('click', start);
+  
+  function start() {
     startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(function printTime(){
-        elapsedTime = Date.now() - startTime;
-        print(timeToString(elapsedTime))
-    }, 10);
-  });
+    timerInterval = setInterval(printTime, 10);
+  };
+
+  function printTime(){
+    elapsedTime = Date.now() - startTime;
+    print(timeToString(elapsedTime))
+  };
 
 // pause button
 
-pauseBtn.addEventListener("click", () =>{
+pauseBtn.addEventListener("click", pause);
+
+  function pause(){
+    clearInterval(timerInterval);
+  };
+
+// reset button 
+
+resetBtn.addEventListener("click", reset);
+
+function reset(){
   clearInterval(timerInterval);
-});
-
-
-
-  // resetBtn.addEventListener("click", reset);
+  print("00:00:00");
+  elasedTime = 0;
+};
   
+// next button
 
+nextBtn.addEventListener("click", next);
+
+function next(){
+  secondTimer.style.display = "block";
+  clearInterval(timerInterval);
+
+};
