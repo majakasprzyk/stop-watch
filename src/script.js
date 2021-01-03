@@ -42,6 +42,7 @@ startBtn.addEventListener('click', start);
 pauseBtn.addEventListener("click", pause);
 resetBtn.addEventListener("click", reset);
 nextBtn.addEventListener("click", next);
+stopBtn.addEventListener("click", stop);
 
 // functions
 
@@ -63,7 +64,6 @@ function pause(){
    clearInterval(timerInterval);
 };
 
-
 function reset(){
   clearInterval(timerInterval);
   print("00:00:00");
@@ -73,5 +73,10 @@ function reset(){
 function next(){
   secondTimer.style.display = "block";
   pause();
+// WIP
+};
 
+function stop() {
+  pause();
+// czym ma się róźnić stop od pause skoro: Stop === Koniec ale Zatrzymanie na obecnym wyniku
 };
