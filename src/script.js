@@ -36,20 +36,28 @@ function timeToString(time) {
   let startTime;
   let elapsedTime;
 
+function print(text){
+  timer.innerHTML = text;
+}
 
   // start button 
 
   startBtn.addEventListener('click', () => {
     startTime = Date.now();
-    setInterval(function printTime(){
+    timerInterval = setInterval(function printTime(){
         elapsedTime = Date.now() - startTime;
-        timer.innerHTML = timeToString(elapsedTime);
+        print(timeToString(elapsedTime))
     }, 10);
   });
 
+// pause button
+
+pauseBtn.addEventListener("click", () =>{
+  clearInterval(timerInterval);
+});
 
 
-  // pauseBtn.addEventListener("click", pause);
+
   // resetBtn.addEventListener("click", reset);
   
 
