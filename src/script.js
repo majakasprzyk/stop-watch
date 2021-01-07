@@ -8,13 +8,14 @@ const stopBtn = document.querySelector(".stopBtn");
 const pauseBtn = document.querySelector(".pauseBtn");
 const saveBtn = document.querySelector(".saveBtn");
 const resetBtn = document.querySelector(".resetBtn");
+const results = document.querySelector("#results");
 
 let startTime;
 let elapsedTime = 0;
 
 // shows time as a string
 
-function timeToString(time) {
+function timeToString(time){
     let hours = time / 3600000;
     let hh = Math.floor(hours);
   
@@ -27,12 +28,10 @@ function timeToString(time) {
     let milliseconds = (seconds - ss) * 100;
     let ms = Math.floor(milliseconds);
   
-  
     let formattedMM = mm.toString().padStart(2, "0");
     let formattedSS = ss.toString().padStart(2, "0");
     let formattedMS = ms.toString().padStart(2, "0");
     
-  
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
   };
 
@@ -51,7 +50,7 @@ function print(text){
   timer.innerHTML = text;
 };
  
-function start() {
+function start(){
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(printTime, 10);
 };
