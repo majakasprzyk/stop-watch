@@ -14,6 +14,7 @@ let startTime;
 let elapsedTime = 0;
 const resultsFromLocalStorage = localStorage.getItem('results') 
 let savedResults = resultsFromLocalStorage === null ? [] : JSON.parse(resultsFromLocalStorage);
+let isPaused = false;
 
 print(timeToString(elapsedTime));
 printResults();
@@ -74,6 +75,11 @@ function printTime(){
 };
 
 function pause(){
+   if (isPaused) {
+     start()
+     return;
+   }
+   isPaused = true;
    clearInterval(timerInterval);
 };
 
