@@ -92,6 +92,9 @@ function reset() {
   clearInterval(timerInterval);
   print("00:00:00");
   elasedTime = 0;
+  savedResults = [];
+  localStorage.removeItem('results');
+  printResults();
 };
   
 function next() {
