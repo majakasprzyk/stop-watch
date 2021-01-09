@@ -1,7 +1,7 @@
 console.log('Good luck!')
 
 const timer = document.querySelector(".timer");
-const secondTimer = document.querySelector(".second-timer")
+const secondTimer = document.querySelector(".second-timer");
 const startBtn = document.querySelector(".startBtn")
 const nextBtn = document.querySelector(".nextBtn");
 const stopBtn = document.querySelector(".stopBtn");
@@ -12,6 +12,11 @@ const results = document.querySelector("#results");
 
 let startTime;
 let elapsedTime = 0;
+const resultsFromLocalStorage = localStorage.getItem('results') 
+let savedResults = resultsFromLocalStorage === null ? [] : JSON.parse(resultsFromLocalStorage);
+
+print(timeToString(elapsedTime));
+printResults();
 
 // shows time as a string
 
@@ -48,8 +53,16 @@ saveBtn.addEventListener("click", save);
 
 function print(text){
   timer.innerHTML = text;
+  const html = savedResults.map(result => {
+    return  `<div><span class="second-timer text-xl mt-8 font-bold font-sans text-indigo-600">${timeToString(result)}</span></div>`
+  }).join('');
+  results.innerHTML = html
 };
  
+function printResults(){
+  results.innerHTML = '';
+}
+
 function start(){
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(printTime, 10);
@@ -71,8 +84,9 @@ function reset(){
 };
   
 function next(){
-  secondTimer.style.display = "block";
-  pause();
+  // secondTimer.style.display = "block";
+  savedResults.push(elapsedTime)
+  printResults();
 // WIP
 };
 
