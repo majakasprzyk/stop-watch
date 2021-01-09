@@ -12,7 +12,7 @@ const results = document.querySelector("#results");
 
 let startTime;
 let elapsedTime = 0;
-const resultsFromLocalStorage = localStorage.getItem('results') 
+const resultsFromLocalStorage = localStorage.getItem('results');
 let savedResults = resultsFromLocalStorage === null ? [] : JSON.parse(resultsFromLocalStorage);
 let isPaused = false;
 
@@ -52,29 +52,34 @@ saveBtn.addEventListener("click", save);
 
 // functions
 
-function print(text){
+function print(text) {
   timer.innerHTML = text;
+};
+ 
+function printResults() {
+  results.innerHTML = '';
   const html = savedResults.map(result => {
     return  `<div><span class="second-timer text-xl mt-8 font-bold font-sans text-indigo-600">${timeToString(result)}</span></div>`
   }).join('');
   results.innerHTML = html
 };
- 
-function printResults(){
-  results.innerHTML = '';
-}
 
-function start(){
+function start() {
+  if (isPaused) {
+    isPaused = false;
+  } else {
+    elapsedTime = 0;
+  };
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(printTime, 10);
 };
 
-function printTime(){
+function printTime() {
   elapsedTime = Date.now() - startTime;
   print(timeToString(elapsedTime))
 };
 
-function pause(){
+function pause() {
    if (isPaused) {
      start()
      return;
@@ -83,21 +88,21 @@ function pause(){
    clearInterval(timerInterval);
 };
 
-function reset(){
+function reset() {
   clearInterval(timerInterval);
   print("00:00:00");
   elasedTime = 0;
 };
   
-function next(){
+function next() {
   savedResults.push(elapsedTime)
   printResults();
 };
 
-function stop(){
+function stop() {
   clearInterval(timerInterval);
 };
 
-function save(){
+function save() {
   localStorage.setItem('result:', timeToString(elapsedTime));
 };
