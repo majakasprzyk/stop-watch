@@ -98,7 +98,7 @@ function reset() {
 };
   
 function next() {
-  savedResults.push(elapsedTime)
+  savedResults.push(elapsedTime);
   printResults();
 };
 
@@ -107,5 +107,5 @@ function stop() {
 };
 
 function save() {
-  localStorage.setItem('result:', timeToString(elapsedTime));
+  localStorage.setItem('results', JSON.stringify(savedResults));
 };
