@@ -9,13 +9,16 @@ const pauseBtn = document.querySelector(".pauseBtn");
 const saveBtn = document.querySelector(".saveBtn");
 const resetBtn = document.querySelector(".resetBtn");
 const results = document.querySelector("#results");
+const resultsFromLocalStorage = localStorage.getItem('results');
 
 let startTime;
 let timerInterval = 0;
 let elapsedTime = 0;
-const resultsFromLocalStorage = localStorage.getItem('results');
 let savedResults = resultsFromLocalStorage === null ? [] : JSON.parse(resultsFromLocalStorage);
 let isPaused = false;
+let keyValue = document.querySelector('.key-value');
+savedResults = [];
+keyValue = '';
 
 print(timeToString(elapsedTime));
 printResults();
