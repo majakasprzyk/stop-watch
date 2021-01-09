@@ -111,4 +111,9 @@ function stop() {
 
 function save() {
   localStorage.setItem('results', JSON.stringify(savedResults));
+  clearInterval(timerInterval);
+  print("00:00:00");
+  elasedTime = 0;
+  savedResults = [];
+  printResults();
 };
