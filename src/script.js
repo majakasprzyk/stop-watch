@@ -73,6 +73,7 @@ function start() {
   };
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(printTime, 10);
+  stopBtn.classList.toggle("hidden");
 };
 
 function printTime() {
@@ -105,6 +106,7 @@ function next() {
 
 function stop() {
   clearInterval(timerInterval);
+  saveBtn.classList.toggle("hidden");
 };
 
 function save() {
