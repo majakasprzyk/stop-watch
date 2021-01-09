@@ -11,6 +11,7 @@ const resetBtn = document.querySelector(".resetBtn");
 const results = document.querySelector("#results");
 
 let startTime;
+let timerInterval = 0;
 let elapsedTime = 0;
 const resultsFromLocalStorage = localStorage.getItem('results');
 let savedResults = resultsFromLocalStorage === null ? [] : JSON.parse(resultsFromLocalStorage);
