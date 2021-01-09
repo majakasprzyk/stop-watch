@@ -84,15 +84,12 @@ function reset(){
 };
   
 function next(){
-  // secondTimer.style.display = "block";
   savedResults.push(elapsedTime)
   printResults();
-// WIP
 };
 
 function stop(){
-  pause();
-// czym ma się róźnić stop od pause skoro: Stop === Koniec ale Zatrzymanie na obecnym wyniku
+  clearInterval(timerInterval);
 };
 
 function save(){
